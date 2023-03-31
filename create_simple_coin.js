@@ -68,11 +68,11 @@ console.log("\n ########################### \n");
 
 // change
 originalCoin.chain[1].data = { SendCoinToA: 400 };
-console.log(JSON.stringify(originalCoin, null, 2));
+// console.log(JSON.stringify(originalCoin, null, 2));
 console.log("改ざんなしかどうか → " + originalCoin.isChainValid());
 console.log("\n ########################### \n");
 
 // ハッシュを書き換えて改ざん
-console.log(JSON.stringify(originalCoin, null, 2));
 originalCoin.chain[1].hash = originalCoin.chain[1].calculateHash();
+// console.log(JSON.stringify(originalCoin, null, 2));
 console.log("ハッシュ値を再計算した場合 → " + originalCoin.isChainValid());
